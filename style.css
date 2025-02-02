@@ -1,0 +1,128 @@
+.container {
+    padding-top: 3vh;
+    width: 100%;
+    margin: auto;
+    columns: 5;
+    column-gap: 5px;
+}
+.container .box {
+    
+    width: 100%;
+    margin-bottom: 10px;
+    break-inside: avoid;
+    border-radius: 15px;
+    white-space: no-wrap;
+    padding: 0 2vw;
+  }
+  .container .box img {
+    max-width: 100%;
+    min-width: 100%;
+    border-radius: 10px;
+  }
+  
+  img:hover {
+    opacity: 0.85;
+  }
+
+  #active{
+    background-color: pink;
+    display: none;
+    opacity: 0;
+  }
+  
+  .caption {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+  }
+
+  footer{
+    width: 100%;
+    height: 40vh;
+    background-color: #1d1d1f;
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1{
+        font-size: 3vw;
+        font-family: monument;
+        color: #dadada;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        font-style: italic;
+    }
+
+    h1::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0%;
+        width: 0%;
+        height: 2px;
+        background-color: rgb(167, 255, 167);
+        z-index: -3;
+    }
+    
+    h1:hover::after{
+        width: 100%;
+        transition: all 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);    
+    }
+    h1::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0%;
+        width: 100%;
+        height: 2px;
+        background-color: rgb(255, 143, 143);
+        z-index: -3;
+    }
+    
+    h1:hover::before{
+        left: 100%;
+        width: 100%;
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);    
+    }
+
+  }
+  
+  @media (max-width: 1427px) {
+    .container {
+      columns: 4;
+      width: calc(100% - 40px);
+    }
+
+  }
+  @media (max-width: 1200px) {
+    .container {
+      columns: 3;
+     
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .container {
+      columns: 3;
+    }
+  
+    body {
+      overflow-x: hidden;
+    }
+  }
+  
+  @media (max-width: 786px) {
+    .container {
+      columns: 2;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      columns: 1;
+    }
+  }
